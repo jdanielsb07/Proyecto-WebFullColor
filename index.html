@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FullColor - Servicios de Impresión Profesional</title>
+    <!--CSS-->
+    <style>
+        /*Generales*/
+        :root {
+            --lima: #bfff00;
+            --lima-dark: #a4d800;
+            --gray-light: #e0e0e0;
+            --gray-dark: #4a4a4a;
+            --black-overlay: rgba(0, 0, 0, 0.8);
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-family);
+        }
+        /*Header*/
+        .header{
+            background-color: var(--gray-dark);
+            color: var(--lima);
+            padding: 20px 50px;
+
+            display: flex;
+            justify-content: space-between; /* Envía el logo a la izquierda y el menú a la derecha */
+            align-items: center; 
+        }
+        .logoHeader{
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Esto crea una separación agradable entre la imagen y el texto */
+        }
+        .logoHeader img{
+            max-width: 75px;
+            height: auto; /* Esto mantiene las proporciones para que no se deforme */
+        }
+        .logoHeader h1 {
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+        .navbar ul{
+            list-style: none; /* Quita los puntos feos de la lista */
+            display: flex; /* Pone los elementos en una línea horizontal */
+            gap: 20px;  /* Espacio entre cada botón del menú */
+        }
+        .navbar a{
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.5s ease; /* Hace que el cambio de color sea suave */
+        }
+        .navbar a:hover{ /*Efecto hover: Cuando pasas el raton por encima*/
+            color: var(--lima);
+        } 
+        /*Carrusel Inicio*/
+        .carrusel-principal{
+            position: relative; /* Necesario para poder poner los botones encima */
+            width: 100%; /*Ancho del 100% de la pantalla*/
+            height: 500px;
+            overflow: hidden; /*Oculta lo que se sale de la caja*/
+        }
+        .carrusel-pista{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out; /* Hace que el movimiento sea suave y animado */
+        }
+        .slide{ /*Cada contenedor de imagen*/
+            min-width: 100%; /* Cada imagen ocupa el 100% de la ventana */
+            height: 100%;
+            position: relative;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Evita que las imágenes se deformen o estiren feo */
+        }
+        .slide-text{
+            position: absolute;
+            bottom:10%;
+            left: 5%;
+            background-color: var(--black-overlay);
+            padding: 1.7rem;
+            border-left: 7px solid var(--lima);
+            max-width: 400px;
+        }
+        .slide h2{
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .slide p{
+            color: var(--gray-light);
+            font-size: 1.1rem; 
+        }
+        .btn-carrusel {
+            position: absolute;
+            top: 50%; /* Los centra verticalmente */
+            transform: translateY(-50%);
+            background-color: var(--black-overlay);
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-carrusel:hover {
+            background-color: var(--lima-dark);
+        }
+        .prev-btn{
+            left: 10px; /* Pega el botón a la izquierda */
+        }
+        .next-btn{
+            right: 10px; /* Pega el botón a la derecha */
+        }
+
+    </style>
+</head>
+<body>
+    <!--Header-->
+    <header class="header">
+        <div class="logoHeader">
+            <img src="img/fullcolorlogoavatar2.png" alt="LogoFullColor">
+            <h1>FullColor</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Cátalogo</a></li>
+                <li><a href="#">Galería</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--Carrusel Inicio-->
+    <section class="carrusel-principal">
+        <div class="carrusel-pista"> <!--Es una "tira larga" donde pegamos todas las fotos.-->
+            <div class="slide"> <!--Es cada uno de los "cuadros" o fotografías individuales dentro de esa tira.-->
+                <img src="img/carrouselfullcolor2025GrabadoLASER-01.png" alt="Imagen 1">
+                <div class="slide-text">
+                    <h2>Grabado Láser</h2>
+                    <p>Ofrecemos servicios de grabado láser con la última tecnología para satisfacer todas tus necesidades.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="img/carrouselfullcolor2025CorteLASER-02.png" alt="Imagen 2">
+                <div class="slide-text">
+                    <h2>Corte Láser</h2>
+                    <p>También contamos con corte láser, ideal para cortes con precisión.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="img/carrouselfullcolor2025DIGITAL-03.png" alt="Imagen 3">
+                <div class="slide-text">
+                    <h2>Impresión Digital</h2>
+                    <p>Soluciones rápidas y económicas para tus proyectos de pequeño y mediano formato con calidad excepcional.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="img/carrousel full color 2025 SUBLIMACION-04.png" alt="Imagen 4">
+                <div class="slide-text">
+                    <h2>Sublimación</h2>
+                    <p>Personaliza productos con imágenes y diseños de alta calidad. Ideal para tazas, playeras, cojines y más, con colores vibrantes y duraderos.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn-carrusel prev-btn">&#10096;</button>
+            <button class="btn-carrusel next-btn">&#10097;</button>
+        </div>
+    </section>
+
+    <!--Scripts Java-->
+    <script>
+    // Seleccionamos la "pista" (el contenedor de las fotos)
+    const pista = document.querySelector('.carrusel-pista');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    // CORRECCIÓN 1: Contamos cuántos .slide existen realmente en el HTML
+    const totalImagenes = pista.querySelectorAll('.slide').length; 
+    let indiceActual = 0;
+
+    // Función maestra para mover el carrusel
+    function slideCarrusel(index) {
+        // CORRECCIÓN 2: Lógica circular
+        if (index < 0) {
+            index = totalImagenes - 1; // Si va atrás desde la primera, va a la última
+        } else if (index >= totalImagenes) {
+            index = 0; // Si va adelante desde la última, vuelve a la primera
+        }
+        
+        indiceActual = index;
+        // Aplicamos el movimiento matemático
+        pista.style.transform = `translateX(-${indiceActual * 100}%)`;
+    }
+
+    // Eventos de los botones
+    prevBtn.addEventListener('click', () => slideCarrusel(indiceActual - 1));
+    nextBtn.addEventListener('click', () => slideCarrusel(indiceActual + 1));
+
+    // MOVIMIENTO AUTOMÁTICO: Cada 5 segundos cambia de imagen
+    setInterval(() => {
+       slideCarrusel(indiceActual + 1);
+    }, 5000);
+</script>
+</body>
+</html>
